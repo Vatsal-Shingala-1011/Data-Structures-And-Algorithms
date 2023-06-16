@@ -9,7 +9,7 @@ struct stack
 };
 int isEmpty(struct stack *ptr)
 {
-    if ((*ptr).top == -1) // or ptr->top
+    if ((*ptr).top == -1) //or ptr->top
     {
         return 1;
     }
