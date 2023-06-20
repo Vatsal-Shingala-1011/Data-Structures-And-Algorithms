@@ -50,8 +50,7 @@ int isBST(struct  node* root){                 //think like inorder traversel
             return 0;
         }
         prev = root;
-        root=root->right;
-        return isBST(root);
+        return isBST(root->right);
     }
     else{
         return 1;

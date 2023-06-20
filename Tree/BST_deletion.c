@@ -47,6 +47,38 @@ void inOrder(struct node *root)
     }
 }
 
+void insertion(struct node * root,int key) //insertion always occurs at last node
+{
+    static struct node * prev=NULL;
+    while(root!=NULL)
+    {
+        prev=root;
+        if(root->data == key)
+        {
+            printf("can't insert");
+            return;
+        }
+        if(root->data>key)
+        {
+            root=root->left;
+        }
+        else 
+        {
+            root=root->right;
+        }
+    }
+    struct node* n=createNode(key);
+    if(key>prev->data)                      //needed
+    {
+        prev->right=n;
+    }
+    else                                    //needed
+    {
+        prev->left=n;
+    }           //no return because argument struct node * root is duplicate  //++ //root is duplicte varialble which contain address of struct node type variable 
+}
+
+
 struct node *inorderpredecessor(struct node *root)
 {
     if (root->left == NULL)
@@ -73,7 +105,7 @@ struct node *inordersuccessor(struct node *root)
     }
     return root;
 }
-/////////what is error here?
+// /////////what is error here?
 // void deletion(struct node *root, int key)
 // {
 //     struct node *ipre=NULL;
@@ -85,13 +117,11 @@ struct node *inordersuccessor(struct node *root)
 //     {
 //         if (root->data > key)
 //         {
-//             root = root->left;
-//             deletion(root, key);
+//             deletion(root->left, key);
 //         }
 //         else if (root->data < key)
 //         {
-//             root = root->right;
-//             deletion(root, key);
+//             deletion(root->right, key);
 //         }
 //     }
 //     if (root->data == key)
@@ -99,12 +129,14 @@ struct node *inordersuccessor(struct node *root)
 //         if (root->left == NULL && root->right == NULL)
 //         {
 //             free(root);
+//             return;
 //         }
 //         else
 //         {
 //             ipre = inorderpredecessor(root);
 //             root->data = ipre->data;
 //             free(ipre);
+//             return;
 //         }
 //     }
 // }
@@ -142,7 +174,6 @@ struct node *deletion(struct node *root, int value) //correct code , self , not 
             isuc=inordersuccessor(root);
             root->data = isuc->data;
             root->right = deletion(root->right, isuc->data);
-
         }
         else
         {

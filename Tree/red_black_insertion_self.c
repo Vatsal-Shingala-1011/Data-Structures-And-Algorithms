@@ -10,6 +10,21 @@ struct Node
     struct Node *parent;
 };
 
+void preOrder(struct Node* root){
+    if(root!=NULL){
+        printf("%d ", root->key);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
+void inOrder(struct  Node* root){
+    if(root!=NULL){
+        inOrder(root->left);
+        printf("%d ", root->key);
+        inOrder(root->right);
+    }
+}
 
 struct Node *createNode(int key)
 {
@@ -49,7 +64,6 @@ struct Node *newnode = NULL;
 
 struct Node *insert(struct Node *node, int key)
 {
-
     if (node == NULL)
     {
         newnode = createNode(key);
@@ -67,15 +81,15 @@ struct Node *insert(struct Node *node, int key)
     }
     return node;
 }
-
-void *red_black_insertion(struct Node *node)
+ 
+void *red_black_insertion(struct Node *node) //self
 {
     struct Node *grandparent;
     while (newnode != root && newnode->c==1 && newnode->parent->c == 1)   //new node globle variable
-    {
+    {    
         grandparent = newnode->parent->parent;
 
-        if (newnode->parent == grandparent->left)   /////case 1
+        if (newnode->parent == grandparent->left)   /////case 1 left side
         {
             struct Node *uncle = grandparent->right;
 
@@ -86,8 +100,6 @@ void *red_black_insertion(struct Node *node)
                     grandparent->c = 1;
                     newnode->parent->c = 0;
                     rightRotate(grandparent);
-                    // rr rotation 2
-                    // recolor
                 }
                 if (newnode = newnode->parent->right) // lr rotation
                 {
@@ -95,8 +107,6 @@ void *red_black_insertion(struct Node *node)
                     grandparent->c = 1;
                     leftRotate(newnode->parent);
                     rightRotate(grandparent);
-                    // lr rotation 2
-                    // recolor
                 }
             }
             else // uncle red
@@ -117,7 +127,7 @@ void *red_black_insertion(struct Node *node)
         }
 
 
-        if (newnode->parent == grandparent->right)     ///case 2
+        if (newnode->parent == grandparent->right)     ///case 2 right side
         {
             struct Node *uncle = grandparent->left;
 
@@ -158,24 +168,11 @@ void *red_black_insertion(struct Node *node)
 
     }
 }
-void preOrder(struct Node* root){
-    if(root!=NULL){
-        printf("%d ", root->key);
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-}
-void inOrder(struct  Node* root){
-    if(root!=NULL){
-        inOrder(root->left);
-        printf("%d ", root->key);
-        inOrder(root->right);
-    }
-}
+
 int main()
 {
 
-    root = insert(root, 447);
+    root = insert(root, 447); //insersion function with assign parents
     red_black_insertion(root);
 
     root = insert(root, 16);

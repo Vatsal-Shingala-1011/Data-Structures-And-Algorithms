@@ -42,7 +42,7 @@ void inOrder(struct  node* root){
 struct node * search(struct node * root,int key)
 {
     struct node* ptr =  root;
-    while(root!=NULL)
+    while(ptr!=NULL)
     {
         if(ptr->data==key)
         {
