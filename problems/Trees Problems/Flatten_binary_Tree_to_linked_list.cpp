@@ -10,7 +10,7 @@
 //  * };
 //  */
 // class Solution { //O(1) extra space 
-////code 100%self not logic
+// //code 100%self not logic
 // public:
 //     void flatten(TreeNode* root) {
 //         TreeNode* curr=root;
