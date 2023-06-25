@@ -1,4 +1,4 @@
-#include <stdio.h> //we can queue or stack or array
+#include <stdio.h> // can use queue or stack or array
 #include <stdlib.h>
 #define V 6
 struct queue 

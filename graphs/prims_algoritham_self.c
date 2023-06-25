@@ -1,5 +1,5 @@
 #include <limits.h>
-#include <stdbool.h>
+#include <stdbool.h>  ///self time com is very high
 #include <stdio.h>
 // Number of vertices in the graph
 #define V 4
@@ -15,10 +15,12 @@ int graph[V][V] = {{0, 3, 2, 0}, //--->j
                    {2, 1, 0, 4}, //|i
                    {0, 5, 4, 0}};
 
-int primMST() {
-  int v[V];       // is not included
+int primMST()
+{
+  int v[V];       // is not included     as per notes
   int a[V] = {0}; // is included
-  for (int i = 0; i < V; i++) {
+  for (int i = 0; i < V; i++)
+  {
     v[i] = 1;
   }
   int parent[V];
@@ -28,20 +30,22 @@ int primMST() {
   int key;
   parent[0] = -1; // let 0 is root node
 
-  for (int k = 0; k < V - 1; k++) // only for count V-1
+  for (int k = 0; k < V - 1; k++) // only for count V-1 (because i=0 is already removed from v so remainning V-1)
   {
     int minweight = INT_MAX;
 
-    for (int anode = 0; anode < V; anode++) {
-      if (a[anode] == 1) {
+    for (int anode = 0; anode < V; anode++)
+    {
+      if (a[anode] == 1) // is in a
+      {
         for (int vnode = 0; vnode < V; vnode++) //   find min cost root
         {
-          if (v[vnode] == 1 &&
-              graph[anode][vnode] != 0) // ele in v and conected with i
-          {
-            if (graph[anode][vnode] < minweight) {
+          if (v[vnode] == 1 && graph[anode][vnode] != 0) // ele in v and conected with i
+          { // is in v                //connected
+            if (graph[anode][vnode] < minweight)
+            {
               minweight = graph[anode][vnode];
-              key = vnode;
+              key = vnode; 
               parent[vnode] = anode;
             }
           }
@@ -52,12 +56,14 @@ int primMST() {
     v[key] = 0;
     a[key] = 1;
   }
-  for (int i = 0; i < V; i++) {
-    printf("%d --> %d       %d  \n", i, parent[i], graph[i][parent[i]]);  //here weare not changing the graphs weight but we only print min weight value
+  for (int i = 0; i < V; i++)
+  {
+    printf("%d --> %d    %d  \n", i, parent[i], graph[i][parent[i]]); // here weare not changing the graphs weight but we only print min weights value
   }
 }
 
-int main() {
+int main()
+{
   /* Let us create the following graph
       2 3
   (0)--(1)--(2)

@@ -24,9 +24,8 @@ void primMST()
     parent[0] = -1;
     int u; // u is min key amongs node in mst (a)
 
-    for (int v = 0; v < V - 1; v++)   //doing V-1 times because for last element no need to check in non mst
+    for (int v = 0; v < V - 1; v++)   
     {
-
         int min = INT_MAX;
         for (int i = 0; i < V; i++) // select min key node
         {
