@@ -1,5 +1,5 @@
-// //leetcode and ninja
-// class Solution {//do tabu
+// // //leet code ninja
+// class Solution {
 // public:
 //     int solve(vector<int>& nums, int target)
 //     {
@@ -33,8 +33,21 @@
 //         memo[target]=ans;
 //         return  memo[target];
 //     }
+//     int solvetab(vector<int>& nums, int target){ //self
+//         vector<int> memo(target+1,0);  //ans not fit in 32 bit
+//         int n=nums.size();             // ninja gives correct ans
+//         memo[0]=1;
+//         for(int i=1;i<=target;i++){
+//             for(int j=0;j<n;j++){
+//                 if(i-nums[j]>=0 ){
+//                     memo[i]+= memo[i-nums[j]];
+//                 }
+//             }
+//         }
+//         return memo[target];
+//     }
 //     int combinationSum4(vector<int>& nums, int target) {
-//         vector<int> memo(target+1,-1);
-//         return solvememo(nums,target,memo);
+//         // vector<int> memo(target+1,-1);
+//         return solvetab(nums,target);
 //     }
 // };
