@@ -1,4 +1,4 @@
-//{ Driver Code Starts  //100% self
+//{ Driver Code Starts  //100% self can also done by dp
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 1000
