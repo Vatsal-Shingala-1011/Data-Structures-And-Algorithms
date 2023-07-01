@@ -129,6 +129,7 @@ void deleteNode(int position, Node *&head)
         delete curr;
     }
 }
+
 // Node* reverse(Node* head){  //self iterative
 //     if(head==NULL || head->next==NULL){
 //         return head;

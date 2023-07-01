@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>//optimal solution
 #include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -29,7 +29,7 @@ void primMST()
         int min = INT_MAX;
         for (int i = 0; i < V; i++) // select min key node
         {
-            if (a[i] == 0 && key[i] < min) // is not in a and min key node then
+            if (a[i] == 0 && key[i] < min) // is not in MST(a) and min key node then
             {
                 u = i;
                 min = key[i];
@@ -38,7 +38,7 @@ void primMST()
 
         a[u] = 1; // add min node in to mst (a)
 
-        for (int i = 0; i < V; i++) // update value of connected node from u if corrunt weight is more than edge weight eith u
+        for (int i = 0; i < V; i++) // update value of connected node from u if current weight is more than edge weight eith u
         {
             if (graph[u][i] && a[i] == 0 && graph[u][i] < key[i]) // node from not mst connected with u and value of curr is less then new
             {

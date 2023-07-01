@@ -1,4 +1,4 @@
-#include <stdio.h> //100% self
+#include <stdio.h> //100% self //not optimal solution
 #include <limits.h>
 #define V 4 // vertexs
 #define E 5 // edges
@@ -24,7 +24,7 @@ int edge[5][3] = {{0, 1, 10}, // node,node,weight
 void kruskalalgo()
 {
     int group = 1;        // group number
-    int key[V] = {0};     // key of node (0 for no group)
+    int key[V] = {0};     // key of node (0 for no group for 1 that node is in group number 1 for 2 is in group2)
     int mstedge[E] = {0}; // edge (if 0 then not check yet for MST,if -1 then checked but it is forming cycle so not include in MST)
     int index;            // index of min weight edge which is not in MST
 
@@ -42,7 +42,7 @@ void kruskalalgo()
 // printf("%d   %d",min,index);
         mstedge[index] = 1; // include min edge to MST
 
-        if (key[edge[index][0]] == 0 && key[edge[index][1]] == 0) // if both are not in the group
+        if (key[edge[index][0]] == 0 && key[edge[index][1]] == 0) // if both nodes are not in the group
         {
             key[edge[index][0]] = group;
             key[edge[index][1]] = group; // then give group number to both
@@ -62,7 +62,7 @@ void kruskalalgo()
             {
                 for (int k = 0; k < V; k++)
                 {
-                    if (key[k] != key[edge[index][1]])
+                    if (key[k] != key[edge[index][1]]) //combine two group to one single group
                     {
                         key[k] = key[edge[index][0]];
                     }
