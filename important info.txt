@@ -16,3 +16,34 @@ However, there are other algorithms for topological sorting as well, such as dep
 In some cases, DFS-based algorithms may be more suitable, especially when the graph is sparse or when you need to explore specific paths or perform additional operations during the traversal. DFS-based algorithms can also be used to detect cycles in the graph, which Kahn's algorithm does not do explicitly.
 
 In summary, there is no one-size-fits-all answer to whether Kahn's algorithm is better than other algorithms for topological sorting. The choice depends on the specific requirements and characteristics of the problem at hand. Both Kahn's algorithm and DFS-based algorithms have their own advantages and trade-offs, and the most suitable algorithm will vary from case to case.
+
+
+
+
+
+Bit
+ans += 1 << i: This statement adds the value obtained from shifting 1 left by i positions to the variable ans. It effectively sets the i-th bit of ans to 1.
+For example, suppose ans is initially 0 (00000000). If you execute ans += 1 << 3, it will set the 3rd bit to 1, resulting in 00001000, which is 8 in decimal.
+#include <iostream>
+
+int main() {
+    int ans = 0;
+
+    // Set the 0th, 2nd, and 5th bits to 1
+    ans += 1 << 0;  // Set 0th bit to 1
+    ans += 1 << 2;  // Set 2nd bit to 1
+    ans += 1 << 5;  // Set 5th bit to 1
+
+    std::cout << "Result: " << ans << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+if (s[i] == " " && c > 0) return c; //error
+By using single quotes (' ') instead of double quotes (" "), you are now comparing the character s[i] against the character literal for a space, which is valid and eliminates the warning.
