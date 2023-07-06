@@ -1,5 +1,4 @@
 #include<iostream> //self
-#include<map>
 using namespace std;
 
 int partition_index(int a[8],int low,int high){
