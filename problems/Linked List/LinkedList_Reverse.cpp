@@ -148,26 +148,26 @@ void deleteNode(int position, Node *&head)
 //     return head;
 // }
 
-// Node* reverse(Node* head){  //self recursive 1 //done
-//     if(head==NULL || head->next==NULL){
-//         return head; 
-//     }
-//     Node* rev=reverse(head->next);
-//     head->next->next=head;
-//     head->next=NULL;
-
-//     return rev;
-// }
-
-void reverse(Node*& head,Node* prev, Node*curr){  //self recursive 2 //done
-    if(curr==NULL){
-        head=prev;
-        return;
+Node* reverse(Node* head){  //self recursive 1 //done
+    if(head==NULL || head->next==NULL){
+        return head; 
     }
-    Node* forward=curr->next;
-    reverse(head,curr,forward);
-    curr->next=prev;
+    Node* rev=reverse(head->next);
+    head->next->next=head;
+    head->next=NULL;
+
+    return rev;
 }
+
+// void reverse(Node*& head,Node* prev, Node*curr){  //self recursive 2 //done
+//     if(curr==NULL){
+//         head=prev;
+//         return;
+//     }
+//     Node* forward=curr->next;
+//     reverse(head,curr,forward);
+//     curr->next=prev;
+// }
 
 int main() 
 {
@@ -182,13 +182,13 @@ int main()
     insertAtTail(tail, 6);
     // print(head);
     
-    // Node* rev=reverse(head); ////self iterative & rec1
-    // print(rev);              ////self iterative & rec1
+    Node* rev=reverse(head); ////self iterative & rec1
+    print(rev);              ////self iterative & rec1
 
-    Node* prev=NULL;            ////self iterative 2
-    Node* curr=head;            ////self iterative 2
-    reverse(head,prev,curr);    ////self iterative 2
-    print(head);                ////self iterative 2
+    // Node* prev=NULL;            ////self iterative 2
+    // Node* curr=head;            ////self iterative 2
+    // reverse(head,prev,curr);    ////self iterative 2
+    // print(head);                ////self iterative 2
 
     return 0;
 }

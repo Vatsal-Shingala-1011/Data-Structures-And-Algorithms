@@ -47,3 +47,22 @@ int main() {
 
 if (s[i] == " " && c > 0) return c; //error
 By using single quotes (' ') instead of double quotes (" "), you are now comparing the character s[i] against the character literal for a space, which is valid and eliminates the warning.
+
+
+
+
+
+
+fmod(x, 1) calculates the remainder when x is divided by 1. It returns the fractional part of x. In this case, x is the logarithm of n to the base 3.
+
+The expression fmod(x, 1) calculates the fractional part of a number x. The fmod function is part of the <cmath> library in C++, and it returns the remainder when x is divided by 1.
+
+In mathematical terms, if x is a real number, fmod(x, 1) gives you the decimal part of x. It effectively removes the whole number part of x and returns the fractional part.
+
+For example:
+
+fmod(5.7, 1) would return 0.7 because the integer part of 5.7 is 5, and the remainder is the fractional part.
+fmod(-3.2, 1) would return -0.2 because the integer part of -3.2 is -3, and the remainder is the fractional part.
+The result of fmod(x, 1) is always between 0 and 1 (excluding 1). If the fractional part is exactly 0, it means that x is an integer. If the fractional part is non-zero, it means that x is not an integer.
+
+It's worth noting that when x is an integer, fmod(x, 1) will always return 0.0.
