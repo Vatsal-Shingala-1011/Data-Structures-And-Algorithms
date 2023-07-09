@@ -4,6 +4,12 @@ Ambiguity means there are multiple references to the same keyword: either two li
 
 
 
+
+
+
+
+
+
 Topological sort(is kahn's algo is better then another algo?)
 Kahn's algorithm and other algorithms for topological sorting serve different purposes and have different characteristics, so it is difficult to say definitively that one is universally better than the other. The choice of algorithm depends on various factors, such as the specific requirements of the problem and the characteristics of the input graph.
 
@@ -45,8 +51,15 @@ int main() {
 
 
 
+
+
+
 if (s[i] == " " && c > 0) return c; //error
 By using single quotes (' ') instead of double quotes (" "), you are now comparing the character s[i] against the character literal for a space, which is valid and eliminates the warning.
+
+
+
+
 
 
 
@@ -66,3 +79,85 @@ fmod(-3.2, 1) would return -0.2 because the integer part of -3.2 is -3, and the 
 The result of fmod(x, 1) is always between 0 and 1 (excluding 1). If the fractional part is exactly 0, it means that x is an integer. If the fractional part is non-zero, it means that x is not an integer.
 
 It's worth noting that when x is an integer, fmod(x, 1) will always return 0.0.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Floyd's Tortoise and Hare algorithm:
+The given code implements the Floyd's Tortoise and Hare algorithm to find the duplicate element in a vector of integers (`nums`). This algorithm is an efficient approach for detecting cycles in a linked list, but it can also be used to find duplicate elements in an array.
+
+Here's how the code works:
+
+1. Initialize two pointers, `tortoise` and `hare`, both pointing to the first element of the vector (`nums[0]`).
+
+2. In the first loop, the `tortoise` moves one step at a time (`nums[tortoise]`), while the `hare` moves two steps at a time (`nums[nums[hare]]`). The loop continues until the `tortoise` and `hare` pointers meet at the same element.
+
+   This loop guarantees that the `tortoise` and `hare` will eventually meet if there is a cycle in the vector. The cycle occurs when the duplicate element is encountered.
+
+3. Once the `tortoise` and `hare` meet, it means there is a cycle. At this point, we reset the `hare` pointer to the first element of the vector (`nums[0]`).
+
+4. In the second loop, both the `tortoise` and `hare` pointers move one step at a time. The `tortoise` starts from the point where the two pointers met, and the `hare` starts from the beginning of the vector. The loop continues until the `tortoise` and `hare` pointers meet again.
+
+   This loop guarantees that the `tortoise` and `hare` will meet at the duplicate element in the vector. By the time they meet again, the `tortoise` would have made one full cycle, and the `hare` would have caught up with it.
+
+5. Finally, we return the value of either the `tortoise` or `hare` pointer, as they both point to the duplicate element in the vector.
+
+The time complexity of this algorithm is O(n), where n is the number of elements in the vector. This is because both loops iterate through the elements at most once. The space complexity is O(1) since the algorithm only uses a constant amount of extra space to store the `tortoise` and `hare` pointers.
+
+
+
+
+
+
+
+
+
+
+
+vector<int> numbers = {1, 2, 3, 3, 4, 5};
+int valueToRemove = 3;
+auto newEnd = remove(numbers.begin(), numbers.end(), valueToRemove);
+numbers.erase(newEnd, numbers.end());
+
+After executing this code, the vector numbers will contain {1, 2, 4, 5}, with the value 3 removed. The erase function is responsible for actually removing the elements from the vector based on the new end iterator returned by remove.
+
+Note that remove does not actually reduce the size of the vector. It only moves the elements to the end of the range. To permanently remove the excess elements, you need to call erase on the vector.
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+int ans=0;
+    int maxSumDivThree(vector<int>& nums) {
+        vector<int>dp(3,0);
+        for(auto a:nums){
+            for(int i:vector<int>(dp)){
+                dp[(i+a)%3]=max(dp[(i+a)%3],i+a);
+            }
+        }
+       return dp[0];
+    }
+};
+
+In this code if we do change in vector inside second for loop in middle of loop so does it change the vector inside  for(int i:vector<int>(dp)) this condition?
+
+No, modifying the vector `dp` inside the second for loop will not affect the iteration of the loop `for(int i : vector<int>(dp))`. The reason is that the range-based for loop creates a copy of the vector `dp` at the beginning of the loop and iterates over that copy.
+
+When the loop `for(int i : vector<int>(dp))` is executed, it creates a temporary copy of the vector `dp` using `vector<int>(dp)`. This temporary copy is used for the iteration, and any modifications made to the original vector `dp` within the loop will not be reflected in the iteration because the loop operates on the copy.
+
+Therefore, modifying the vector `dp` inside the second for loop will only affect subsequent iterations of the loop and will not have any impact on the current iteration or the elements being accessed during that iteration.
