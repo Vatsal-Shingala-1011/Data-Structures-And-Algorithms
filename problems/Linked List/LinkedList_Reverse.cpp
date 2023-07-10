@@ -155,7 +155,6 @@ Node* reverse(Node* head){  //self recursive 1 //done
     Node* rev=reverse(head->next);
     head->next->next=head;
     head->next=NULL;
-
     return rev;
 }
 
