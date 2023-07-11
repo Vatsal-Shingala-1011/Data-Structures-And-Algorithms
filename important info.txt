@@ -132,6 +132,9 @@ After executing this code, the vector numbers will contain {1, 2, 4, 5}, with th
 
 Note that remove does not actually reduce the size of the vector. It only moves the elements to the end of the range. To permanently remove the excess elements, you need to call erase on the vector.
 
+Using std::remove(), the first call will move all the elements that are not equal to 3 towards the beginning of the vector. The returned iterator will point to the new logical end of the modified vector. The subsequent call to erase() will remove the elements from the returned iterator to the end of the vector.
+
+
 
 
 
@@ -161,3 +164,37 @@ No, modifying the vector `dp` inside the second for loop will not affect the ite
 When the loop `for(int i : vector<int>(dp))` is executed, it creates a temporary copy of the vector `dp` using `vector<int>(dp)`. This temporary copy is used for the iteration, and any modifications made to the original vector `dp` within the loop will not be reflected in the iteration because the loop operates on the copy.
 
 Therefore, modifying the vector `dp` inside the second for loop will only affect subsequent iterations of the loop and will not have any impact on the current iteration or the elements being accessed during that iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+why ((1 << i) & n) == 1 is not work:
+The condition ((1 << i) & n) == 1 does not work as expected because it checks if the result of the bitwise AND operation between (1 << i) and n is equal to 1. However, the result of the bitwise AND operation can be any number that has the ith bit set (either 0 or a power of 2).
+
+To correctly check if the ith bit is set (equal to 1), you should modify the condition to check if the result is non-zero:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
