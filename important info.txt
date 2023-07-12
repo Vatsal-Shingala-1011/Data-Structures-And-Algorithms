@@ -8,6 +8,29 @@ Ambiguity means there are multiple references to the same keyword: either two li
 
 
 
+// Allocate dynamic memory for the vector
+    int* dynamicArray = new int[size];
+
+    // Assign the dynamic memory to a vector
+    std::vector<int> myVector(dynamicArray, dynamicArray + size);
+
+
+
+
+
+
+
+
+def power(self,N,R):  
+        M = 1000000007
+        return pow(N,R,M)
+
+
+
+
+
+
+
 
 
 Topological sort(is kahn's algo is better then another algo?)
