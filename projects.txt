@@ -1,0 +1,71 @@
+Online Marketplace: Design an online marketplace where users can buy and sell products. Implement efficient data structures like heaps or balanced binary search trees for managing product listings and performing quick searches.
+
+
+
+File Compression Tool: Build a file compression tool using data compression algorithms such as Huffman coding or Lempel-Ziv-Welch (LZW). Implement data structures like priority queues or hash maps to optimize compression and decompression operations.
+
+
+
+
+Job Scheduling System: Develop a job scheduling system that optimizes the allocation of resources to tasks. Implement scheduling algorithms like round-robin, shortest job first, or priority-based scheduling using appropriate data structures.
+
+splitwise
+
+RedBlack Tree
+
+Treaps
+
+Data Encryption and Cryptography: Implement cryptographic algorithms, such as RSA, AES, or elliptic curve cryptography, for secure data encryption and decryption. Utilize data structures like hash maps or balanced trees to optimize key management and secure storage.
+
+
+Online Learning Systems: Create algorithms for online learning, where models need to adapt and update continuously based on streaming data. Utilize data structures like online learning models, sliding windows, or sketching algorithms for efficient and scalable online learning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

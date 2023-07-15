@@ -5,6 +5,37 @@ Ambiguity means there are multiple references to the same keyword: either two li
 
 
 
+array:
+count += upper_bound(matrix[i], matrix[i] + n, mid) - matrix[i];
+
+
+
+
+
+
+
+
+The time complexity to find the size of a std::map is constant time or O(1).
+
+In C++, the std::map class provides a member function size() that returns the number of elements in the map. This function retrieves the stored size from an internal variable, which is updated whenever elements are inserted or erased from the map. Therefore, the size() function can directly return the stored size in constant time, regardless of the number of elements present in the map.
+
+
+
+
+
+
+
+
+
+
+If you use cout << (double)(1) / 0; in C++ code, it will result in a special floating-point value called "infinity" or "INF". This occurs because you are dividing a nonzero number by zero, which in floating-point arithmetic is defined as positive or negative infinity depending on the sign of the numerator.
+
+
+
+
+
+In this corrected code, the left-shift operation in long long a is corrected to (1LL << i). The 1LL represents a long long integer with the value 1, and it is left-shifted by i bits.
+
 
 
 
@@ -180,6 +211,41 @@ int ans=0;
     }
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+So, the line vector<int> adj[n]; declares an array named adj that consists of n vectors, each capable of holding integers.
+
+You can access individual vectors in the array using array indexing. For example, adj[0] refers to the first vector, adj[1] refers to the second vector, and so on.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 In this code if we do change in vector inside second for loop in middle of loop so does it change the vector inside  for(int i:vector<int>(dp)) this condition?
 
 No, modifying the vector `dp` inside the second for loop will not affect the iteration of the loop `for(int i : vector<int>(dp))`. The reason is that the range-based for loop creates a copy of the vector `dp` at the beginning of the loop and iterates over that copy.
@@ -216,6 +282,13 @@ To correctly check if the ith bit is set (equal to 1), you should modify the con
 
 
 
+In an unordered_map<int>, if you try to access an element using the square bracket operator ([]) and the key does not exist in the map, a new element with that key will be inserted into the map. For unordered_map<int>, the default value of the element will depend on the value type associated with the key.
+
+If the value type is a primitive type (e.g., int, double, bool), the default value will be the default-initialized value for that type. For int, it will be 0. If the value type is a class type, the default constructor of the class will be called to initialize the value.
+
+For example, if you have an unordered_map<int, int>, the default value for the int value type will be 0. Similarly, for an unordered_map<int, std::string>, the default value for the std::string value type will be an empty string ("").
+
+In the case of unordered_map<int> map;, since no explicit value type is specified, it will use the default value type, which is std::pair<const int, int>. The default value for the int value type will be 0, so the default value for map[6] will be 0.
 
 
 
