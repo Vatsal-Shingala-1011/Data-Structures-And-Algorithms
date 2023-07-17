@@ -6,7 +6,6 @@ File Compression Tool: Build a file compression tool using data compression algo
 
 
 
-
 Job Scheduling System: Develop a job scheduling system that optimizes the allocation of resources to tasks. Implement scheduling algorithms like round-robin, shortest job first, or priority-based scheduling using appropriate data structures.
 
 splitwise
@@ -20,7 +19,15 @@ Data Encryption and Cryptography: Implement cryptographic algorithms, such as RS
 
 Online Learning Systems: Create algorithms for online learning, where models need to adapt and update continuously based on streaming data. Utilize data structures like online learning models, sliding windows, or sketching algorithms for efficient and scalable online learning.
 
+Image Segmentation: Implement a graph-based algorithm that segments an image into meaningful regions based on pixel similarities. Utilize graph algorithms like normalized cuts, min-cut/max-flow, or graph-based clustering techniques for image segmentation.
 
+*************************************************************************************************************************************************************************
+
+splitwise
+
+File Compression Tool: Build a file compression tool using data compression algorithms such as Huffman coding or Lempel-Ziv-Welch (LZW). Implement data structures like priority queues or hash maps to optimize compression and decompression operations.
+
+Image Segmentation: Implement a graph-based algorithm that segments an image into meaningful regions based on pixel similarities. Utilize graph algorithms like normalized cuts, min-cut/max-flow, or graph-based clustering techniques for image segmentation.
 
 
 

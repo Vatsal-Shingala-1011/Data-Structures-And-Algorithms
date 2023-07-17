@@ -3,6 +3,18 @@ Ambiguity means there are multiple references to the same keyword: either two li
 
 
 
+stoi,stoll
+
+
+
+next_permutation(s.begin(),s.end());
+
+
+long long S=accumulate(A.begin(),A.end(),0LL);
+
+
+
+
 
 
 array:
