@@ -3,6 +3,16 @@ Ambiguity means there are multiple references to the same keyword: either two li
 
 
 
+
+
+vector<int> adj[]:
+int size = sizeof(adj[front]) / sizeof(adj[0]);
+The adj is an array of vectors, and adj[front] is a vector. However, sizeof(adj[front]) will not give you the size of the vector correctly. Instead, you should use the size() member function of the vector to get its size.
+array=adj[2,5,3,7] 
+vector=adj[2],adj[5]...
+
+
+
 stoi,stoll
 
 
