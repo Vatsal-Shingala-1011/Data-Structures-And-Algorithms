@@ -26,10 +26,16 @@ Graphs
 - Topological Sort: https://bit.ly/3M9mM4t
   using DFS
   kahan's algo
-- Shortest Path in Undirected Graph: https://www.codingninjas.com/codestud...
+- Shortest Path in Undirected Graph with unit weight for each edges: https://www.codingninjas.com/codestud...
+  BSF Traversal
+  single sorce shortest path
 - Shortest Path in DAG: https://www.codingninjas.com/codestud...
+  topo sort and then update dist vector
+  single sorce shortest path
 - Dijkstra's Algorithm: https://www.codingninjas.com/codestud...
-  Shortest Path in UAG +ve weights only
+  priority queue
+  Shortest Path in UAG(undirected acyclic graph) +ve weights only
+  single sorce shortest path 
 - Prim's Algo: https://bit.ly/3axYOSF
 - Kruskal's Algo for MST: https://www.codingninjas.com/codestud...
 - MST

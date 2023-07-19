@@ -1,3 +1,4 @@
+//unit weight only for diff weigth dijkstra algo
 ////BSF
 // class Solution {
 //   public:
