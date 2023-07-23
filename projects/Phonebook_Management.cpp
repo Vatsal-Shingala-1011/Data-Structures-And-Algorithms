@@ -129,7 +129,7 @@ private:
             } else if (contact.name > node->contact.name) {
                 node = node->right;
             } else {
-                node->contact.phoneNumber = contact.phoneNumber;
+                node->contact.phoneNumber = contact.phoneNumber;//if name is same then update number with new number
                 return;
             }
         }
@@ -221,7 +221,7 @@ private:
         }
         x->color = BLACK;
     }
-    
+
     void rbTransplant(NodePtr u, NodePtr v) {
         if (u->parent == nullptr) {
             root = v;
@@ -321,7 +321,7 @@ public:
     }
 
     void changePhoneNumber(const string& name, const string& newPhoneNumber) {
-        NodePtr node = findNode(name, root);
+        NodePtr node = findNode(name, root); //if name is found then its update number with new number
         if (node == TNULL) {
             cout << "Contact not found in the phonebook." << endl;
         } else {

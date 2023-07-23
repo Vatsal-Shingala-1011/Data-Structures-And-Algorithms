@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 enum Color { RED, BLACK };
@@ -288,13 +289,30 @@ public:
         cout<<endl<<"Spell added successfully."<<endl;
     }
 
-    void search(const string& word) { //searching word
+    // void search(const string& word) { //searching word
+    //     NodePtr node = findNode(word, root);
+    //     if (node == TNULL) {
+    //         cout<<endl<<"word "<<word<<" is not correct. possible spelling may be :"<< endl;
+    //     } else {
+    //         cout<<endl<<"Word is spelled correctly."<<endl;
+    //         //write code for suggetion
+    //         // Implement suggestions logic here based on the dictionary
+    //     }
+    // }
+    void search(const string& word) {
         NodePtr node = findNode(word, root);
         if (node == TNULL) {
-            cout<<endl<<"word "<<word<<" is not correct. possible spelling may be :"<< endl;
+            cout << "word " << word << " is not correct. Possible spellings may be:" << endl;
+
+            // Call machine learning model to get suggested corrections
+            vector<string> suggestedCorrections = getMachineLearningSuggestion(word);
+
+            // Display suggested corrections to the user
+            for (const string& suggestion : suggestedCorrections) {
+                cout << suggestion << endl;
+            }
         } else {
-            cout<<endl<<"Word is spelled correctly."<<endl;
-            //write code for suggetion
+            cout << "Word is spelled correctly." << endl;
         }
     }
 
@@ -325,6 +343,7 @@ int main() {
         cout << "5. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
+        cout<<endl;
         switch (choice) {
             case 1:
                 cout<<"Enter word: ";
@@ -357,6 +376,6 @@ int main() {
                 cout<<"Invalid choice. Please try again."<<endl;
         }
     } while (choice != 5);
-    return 0;
 
+    return 0;
 }
