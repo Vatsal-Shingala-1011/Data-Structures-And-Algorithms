@@ -1,4 +1,4 @@
-// class Solution//kruskal algo
+// class Solution//kruskal algo for MST
 // {
 // 	public:
 // 	void makeset(vector<int>& parent,vector<int>& rank,int V){

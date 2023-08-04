@@ -45,7 +45,6 @@
 //         }
 // 	//push 0 indegree
 // 	queue<int> q;
-	
 // 	for(int k=0;k<V;k++){
 // 	    if(indegree[k]==0) q.push(k);
 // 	}

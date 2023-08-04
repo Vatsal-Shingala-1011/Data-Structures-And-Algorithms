@@ -13,8 +13,8 @@ vector=adj[2],adj[5]...
 
 vector<vector<int>> adj[]
 array= adj[3,7,4,6] 
-vector= a={{3,4},{3,6},{2,5}}
-	b={{4,7},{6,7}}
+vector= adj[3]={{5,4},{3,6},{2,5}}
+	adj[7]={{4,7},{6,7}}
 vector<vector<int>> adj[] to vector<pair<int,pair<int,int>>>edges:
 vector<pair<int,pair<int,int>>>edges;
        	for(int i=0;i<V;i++){

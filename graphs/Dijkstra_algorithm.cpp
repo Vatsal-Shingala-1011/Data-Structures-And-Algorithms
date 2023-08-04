@@ -9,7 +9,7 @@
 //         for(int i=0;i<V;i++){
 //             dist[i]=INT_MAX;
 //         }
-//         set<pair<int,int>> s;
+//         set<pair<int,int>> s; //sert return element in sorted order
 //              // dist, node
 //         dist[S]=0;
 //         s.insert(make_pair(0,S));

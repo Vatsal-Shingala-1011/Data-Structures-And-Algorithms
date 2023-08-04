@@ -1,4 +1,4 @@
-// // class Solution
+// // class Solution  /////////using DFS
 // // {
 // // 	public:
 // // 	void topological(int node,unordered_map<int,bool>& visited,stack<int>& s,vector<int>*& adj){
