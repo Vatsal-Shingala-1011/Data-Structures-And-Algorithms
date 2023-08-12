@@ -8,9 +8,7 @@
 // 	    }
 // 	}
 // 	int findparent(vector<int>& parent,int node){
-// 	    if(parent[node]==node){
-// 	        return node;
-// 	    }
+// 	    if(parent[node]==node) return node;
 // 	    return parent[node]=findparent(parent,parent[node]); //path compression
 // 	}
 // 	void unionset(int u, int v,vector<int>& parent,vector<int>& rank){
@@ -31,6 +29,7 @@
 //     int spanningTree(int V, vector<vector<int>> adj[])
 //     {
 //         vector<pair<int,pair<int,int>>>edges;
+                    // wt  ,     u , v
 //         for(int i=0;i<V;i++){
 //             for(auto it:adj[i]){
 //                 int u=i;
@@ -39,12 +38,12 @@
 //                 edges.push_back({wt,{u,v}});
 //             }
 //         }
-//         sort(edges.begin(),edges.end()); //bydefault sort with index 0
         
 //         vector<int> parent(V);
 //         vector<int> rank(V);
 //         makeset(parent,rank,V);
         
+//         sort(edges.begin(),edges.end()); //bydefault sort with index 0
 //         int minweight=0;
 //         for(auto i:edges){
 //             int u=findparent(parent,i.second.first);

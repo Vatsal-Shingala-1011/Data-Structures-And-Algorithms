@@ -1,15 +1,11 @@
 // class Solution
 // {
 // 	public:
-// 	//Function to find the shortest distance of all the vertices
-//     //from the source vertex S.
+// 	//Function to find the shortest distance of all the vertices from the source vertex S.
 //     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
 //     {
-//         vector<int> dist(V);
-//         for(int i=0;i<V;i++){
-//             dist[i]=INT_MAX;
-//         }
-//         set<pair<int,int>> s; //sert return element in sorted order
+//         vector<int> dist(V,INT_MAX);
+//         set<pair<int,int>> s; //set return element in sorted order
 //              // dist, node
 //         dist[S]=0;
 //         s.insert(make_pair(0,S));

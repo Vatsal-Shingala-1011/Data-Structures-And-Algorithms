@@ -11,7 +11,7 @@
 //         vector<int> dist(V,1e8);
 //         dist[S]=0;
 //         for(int i=0;i<V-1;i++){ //V-1 time loop
-//             //traverse on edges 
+//             //traverse on every edges 
 //             for(int j=0;j<n;j++){
 //                 int u=edges[j][0];
 //                 int v=edges[j][1];

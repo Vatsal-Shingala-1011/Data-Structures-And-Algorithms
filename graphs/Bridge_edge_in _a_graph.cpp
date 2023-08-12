@@ -33,7 +33,7 @@
 //         vector<int> low(V,-1);
 //         int parent=-1;
 //         unordered_map<int,bool> visited;
-//         bool forthisque=false;
+//         bool forthisque=false;//for GFGs quesion i make this variable
 //         //dsf
 //         for(int i=0;i<V;i++){
 //             if(!visited[i]){

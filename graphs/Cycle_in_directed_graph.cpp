@@ -1,4 +1,4 @@
-// // class Solution { //DSF //why TLE
+// // class Solution { //DFS //why TLE
 // //   public:
 // //     bool checkCycleDSF(int node,unordered_map<int,bool> & visited,unordered_map<int,bool>& DSFvisited,vector<int>*& adj){
 // //         visited[node]=true;

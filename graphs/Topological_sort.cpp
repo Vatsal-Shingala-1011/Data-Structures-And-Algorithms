@@ -43,13 +43,12 @@
 //                 indegree[j]++;
 //             }
 //         }
-// 	//push 0 indegree
+// 	//push node with 0 indegree in queue
 // 	queue<int> q;
-	
 // 	for(int k=0;k<V;k++){
 // 	    if(indegree[k]==0) q.push(k);
 // 	}
-// 	// do bsf
+// 	// do bfs
 // 	vector<int> ans;
 // 	while(!q.empty()){
 // 	    int front=q.front();

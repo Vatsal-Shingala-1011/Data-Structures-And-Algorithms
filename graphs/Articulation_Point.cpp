@@ -21,8 +21,7 @@
 //             if(parent == -1 && child>1){ //for only root node of that component so parent==1
 //                 ap[node]=true;
 //             }
-//         }
-        
+//         }     
 //     }
 //     vector<int> articulationPoints(int V, vector<int>adj[]) {
 //         int timer=0;

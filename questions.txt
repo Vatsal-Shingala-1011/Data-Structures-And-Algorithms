@@ -30,7 +30,7 @@ Graphs //GFGs
   BSF Traversal
   single sorce shortest path
 - Shortest Path in DAG
-  topo sort and then update distance vector
+  topo sort(reverse) and then update distance vector
   single sorce shortest path
 - Dijkstra's Algorithm
   priority queue
