@@ -58,8 +58,6 @@ void print(Node* &head) {
 }
 
 void insertAtPosition(Node* &tail, Node* & head, int position, int d) {
-
-
     //insert at Start
     if(position == 1) {
         insertAtHead(head, d);
@@ -201,9 +199,7 @@ Node* getStartingNode(Node* head) {
         slow = slow -> next;
         intersection = intersection -> next;
     }  
-
     return slow;
-
 }
 
 void removeLoop(Node* head) {
@@ -260,8 +256,7 @@ int main() {
     if(floydDetectLoop(head) != NULL) {
         cout << "Cycle is present " << endl;
     }
-    else
-    {
+    else{
         cout << "no cycle" << endl;
     }
 

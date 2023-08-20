@@ -1,10 +1,11 @@
 #include <stdio.h> //self
+#include <limits.h>
 int selection(int *a, int n)
 {
     int key;
     for (int i = 0; i < n - 1; i++)
     {
-        int min =0;
+        int min =INT_MAX;
         int j = i + 1;
         key =a[i];
         for(int p=i;p<n-1;p++)

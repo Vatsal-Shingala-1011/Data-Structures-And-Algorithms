@@ -17,7 +17,7 @@ void shell_sort(int *a, int n) // arguments are array, size
             {
                 if (a[i+gap] < a[i])
                 {
-                    swap(&a[i], &a[i + gap]);     //when elemrnt is less then -gap element
+                    swap(&a[i], &a[i + gap]);     //when element is less then -gap element
                 }
                 else{
                     break;  //when element is greater than -gap element
