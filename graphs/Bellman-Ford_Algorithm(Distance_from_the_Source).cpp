@@ -8,7 +8,7 @@
 //     */
 //     vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
 //         int n=edges.size();
-//         vector<int> dist(V,1e8);
+//         vector<int> dist(V,1e9);
 //         dist[S]=0;
 //         for(int i=0;i<V-1;i++){ //V-1 time loop
 //             //traverse on every edges 

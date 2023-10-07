@@ -151,9 +151,15 @@ struct node *deletion(struct node *root, int value) //correct code , self , not 
     {
         return NULL;
     }
-    if (root->left == NULL && root->right == NULL)
-    {
-        free(root);
+    if (root->left == NULL && root->right == NULL){
+        if(root->data==value){
+            free(root);
+            return NULL;
+        }
+        else{
+            printf("value is not found in tree ");
+            return root;
+        }
         return NULL;
     }
 
@@ -218,7 +224,7 @@ int main()
     insertion(p, 34);
     inOrder(p);
     printf("\n");
-    deletion(p, 40);
+    deletion(p, 41230);
     inOrder(p);
 
     // printf("%d", p->right->right->data);

@@ -3,7 +3,6 @@
 // 	public:
 	
 // 	void dfs(int index  , vector<int> &vis , vector<vector<int>>& adj , stack<int>&st){
-	    
 // 	    vis[index] = 1;
 // 	    for(auto it : adj[index]){
 // 	        if(!vis[it]){
@@ -26,9 +25,7 @@
 //     {
 //         stack<int> st;
 //         vector<int> vis(V , 0);
-//         vector<int> adj1[V];
-       
-        
+//         vector<int> adj1[V];      
 //         for(int i = 0 ; i<V  ;i++){
 //             if(!vis[i]){
 //                 dfs( i , vis , adj , st);

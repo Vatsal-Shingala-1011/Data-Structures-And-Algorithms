@@ -16,6 +16,7 @@
 //             s.erase(s.begin());
 //             //traverse on neighbour
 //             for(auto neighbour: adj[topNode]){
+//                          //    wt         
 //                 if(nodeDist+neighbour[1]<dist[neighbour[0]]){
 //                     // update distance
 //                     dist[neighbour[0]]=nodeDist+neighbour[1];

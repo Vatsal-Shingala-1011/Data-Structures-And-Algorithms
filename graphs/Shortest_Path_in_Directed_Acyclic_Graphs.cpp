@@ -25,10 +25,7 @@
 //             } 
 //         }
 //         int src=0; //given
-//         vector<int> dist(N);
-//         for(int i=0;i<N;i++){
-//             dist[i]=INT_MAX;  //starting initialize with MAX
-//         }
+//         vector<int> dist(N,INT_MAX);
 //         dist[src]=0;
 //         while(!s.empty()){
 //             int top=s.top();
