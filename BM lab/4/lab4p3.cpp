@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 struct node{
     int data;
     struct node* left;
@@ -80,5 +79,5 @@ int main(){
 createNode: Time - O(1), Space - O(1)
 inorder: Time - O(n), Space - O(h) (where h is the height of the tree)
 insertUserInput: Time - O(n), Space - O(n)
-TopVIew: Time - O(n), Space - O(n)
+lca: Time - O(n), Space - O(n)
 */

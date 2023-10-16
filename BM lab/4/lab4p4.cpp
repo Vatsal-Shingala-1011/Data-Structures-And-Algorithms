@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 struct node{
     int data;
     struct node* left;
@@ -43,6 +42,23 @@ struct node* insertUserInput() {
     return root;
 }
 
+// Function to swap the left and right subtrees of a given node
+void swapSubtrees(struct node* root, int n) {
+    if (root == NULL){
+        cout<<"value not found "<<endl;
+        return; //If the tree is empty
+    }
+    if (root->data == n) {
+        // Swap the left and right subtrees for the current node
+        struct node* temp = root->left;
+        root->left = root->right;
+        root->right = temp;
+    } else {
+        // Recursively search for the target node in the left and right subtrees
+        swapSubtrees(root->left, n);
+        swapSubtrees(root->right, n);
+    }
+}
 
 
 int main(){
@@ -51,13 +67,13 @@ int main(){
     p=insertUserInput();
     inOrder(p);
     cout<<endl;
-    struct node* x;
-    int a,b;
-    cout<<"Enter the value of nodes  "<<endl;
-    cin>>a>>b;
-    x=lca(p,a,b);
-    cout<<"Lowest Common Ancestor is  "<<x->data<<endl;
-
+    int n;
+    cout<<"Enter the value(data) of nodes "<<endl;
+    cin>>n;
+    swapSubtrees(p,n);
+    cout<<"After swapping inorder of tree is "<<endl;
+    inOrder(p);
+    cout<<endl;
     return 0;
 }
 
@@ -66,5 +82,5 @@ int main(){
 createNode: Time - O(1), Space - O(1)
 inorder: Time - O(n), Space - O(h) (where h is the height of the tree)
 insertUserInput: Time - O(n), Space - O(n)
-TopVIew: Time - O(n), Space - O(n)
+swapSubtrees: Time - O(n), Space - O(Height of tree) 
 */
