@@ -17,12 +17,12 @@ void insert(int key)
         i = (i + (x * h2)) % table_size;
         while (1)
         {
-            // printf("     *%d*   ", i);
             if (a[i] == 0)
             {
                 a[i] = key;
                 break;
             }
+            x++; // Increment x for quadratic probing.
             i = (i + (x * h2)) % table_size;
         }
     }
@@ -34,15 +34,14 @@ void find(int key)
     int count = 0;
     int h2 = 8 - (key % 8);
     int x = 1;
-    i = (i + (x * h2)) % table_size;
-    for (int j = i; count < table_size * table_size; j = (i + (x * h2)) % table_size, count++,x++)
+    for (int j = i; count < table_size; count++, x++)
     {
-        // printf("    *%d*    ",j);
         if (a[j] == key)
         {
             printf("%d is at index %d\n", key, j);
             return;
         }
+        j = (i + (x * h2)) % table_size; // Update j using quadratic probing.
     }
     printf("%d is not found\n", key);
 }
@@ -53,7 +52,7 @@ void print()
     {
         if (a[i] != 0)
         {
-            printf("%d-->%d  ", i, a[i]);
+            printf("%d --> %d  ", i, a[i]);
         }
     }
     printf("\n");
