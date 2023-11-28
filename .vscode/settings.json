@@ -4,7 +4,8 @@
         "new": "cpp",
         "ostream": "cpp",
         "vector": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "type_traits": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "[cpp]": {
